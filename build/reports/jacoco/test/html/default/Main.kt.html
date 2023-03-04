@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DZ332var2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums"><span class="pc" id="L1">var card = &quot;Maestro&quot;         // &quot;Maestro&quot;  &quot;Visa&quot;  &quot;Mir&quot; &quot;VK_Play&quot;</span>
+<span class="pc" id="L2">var translation = 20000           // СЃСѓРјРјР° РїРµСЂРµРІРѕРґР°</span>
+<span class="pc" id="L3">var transfersMonth = 700        // СЃСѓРјРјР° РїРµСЂРµРІРѕРґРѕРІ РІ РјРµСЃСЏС†</span>
+
+
+fun main() {
+<span class="nc" id="L7">    println(&quot;${text(card, translation, transfersMonth)}&quot;)</span>
+<span class="nc" id="L8">}</span>
+fun text(card: String, translation: Int, transfersMonth: Int): String {
+<span class="fc bfc" id="L10" title="All 2 branches covered.">    if (maxAmountMonth(card, translation, transfersMonth) == -1) {</span>
+<span class="fc" id="L11">        return (&quot;Р’С‹ РїСЂРµРІС‹СЃРёР»Рё СЃСѓРјРјСѓ РјР°РєСЃРёРјР°Р»СЊРЅС‹С… РїР»Р°С‚РµР¶РµР№  РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ&quot;)</span>
+    } else {
+<span class="fc" id="L13">        return (</span>
+<span class="fc" id="L14">                &quot;РљРѕРјРёСЃСЃРёСЏ Р·Р° С‚РµРєСѓС‰РёР№ РїРµСЂРµРІРѕРґ РїРѕ РєР°СЂС‚Рµ $card СЃРѕСЃС‚Р°РІР»СЏРµС‚ - ${</span>
+<span class="fc" id="L15">                    taxCalculation(card, translation, transfersMonth)</span>
+<span class="fc" id="L16">                } СЂСѓР±Р»РµР№&quot;</span>
+                )
+    }
+}
+
+fun taxCalculation(card: String, translation: Int, transfersMonth: Int): Double {
+<span class="pc bpc" id="L22" title="4 of 13 branches missed.">    return when (card) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        &quot;Mastercard&quot;, &quot;Maestro&quot; -&gt; (if (translation &lt; 75_000) 0 else (translation * 0.006 + 20)).toDouble()</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        &quot;Visa&quot;, &quot;Mir&quot; -&gt; (if (translation * 0.0075 &lt; 35) 35 else translation * 0.0075).toDouble()</span>
+<span class="fc" id="L25">        else -&gt; 0.0</span>
+    }
+}
+fun maxAmountMonth(card: String, translation: Int, transfersMonth: Int): Int{
+<span class="fc bfc" id="L29" title="All 2 branches covered.">    if ((translation + transfersMonth) &gt; 600000) {</span>
+<span class="fc" id="L30">        return -1</span>
+    } else {
+<span class="fc" id="L32">        return 0</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
