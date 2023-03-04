@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MainKtTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-03-04T10:24:34" hostname="MSI" time="0.038">
+<testsuite name="MainKtTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-03-04T10:40:15" hostname="MSI" time="0.034">
   <properties/>
-  <testcase name="testTaxCalculationMirProcent" classname="MainKtTest" time="0.036"/>
+  <testcase name="testTaxCalculationMirProcent" classname="MainKtTest" time="0.033"/>
   <testcase name="testTaxCalculationMastercard" classname="MainKtTest" time="0.0"/>
   <testcase name="testText" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationMaestro" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationMastercardProcent" classname="MainKtTest" time="0.0"/>
-  <testcase name="testTextElse" classname="MainKtTest" time="0.001"/>
+  <testcase name="testTextElse" classname="MainKtTest" time="0.0"/>
   <testcase name="testMaxAmountMonth" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationVisaProcent" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationMir" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationMaestroProcent" classname="MainKtTest" time="0.0"/>
   <testcase name="testTaxCalculationVK_Play" classname="MainKtTest" time="0.0"/>
-  <testcase name="testTaxCalculationVisa" classname="MainKtTest" time="0.001"/>
+  <testcase name="testTaxCalculationVisa" classname="MainKtTest" time="0.0"/>
   <testcase name="testMaxAmountMonthExcess" classname="MainKtTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

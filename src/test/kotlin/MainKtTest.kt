@@ -15,7 +15,7 @@ class MainKtTest {
     }
 
     @Test
-    fun testTaxCalculationVisaProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем.
+    fun testTaxCalculationVisaProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем. (сравнение до 3х знаков после запятой)
         // Проблема в том, что почему-то в github Actions по-другому отрабатывает метод String.format() (вместо запятой ставит точку)
         // Метод replace заменяет в строке все символы из 1 параметра символом из второго параметра
         val card = "Visa"
@@ -26,17 +26,17 @@ class MainKtTest {
         assertEquals("150,000", result)
     }
     @Test
-    fun testTaxCalculationMir() {    // ВАРИАНТ СРАВНЕНИЯ 1
+    fun testTaxCalculationMir() {
         val card = "Mir"
         val translation = 400
         val transfersMonth = 0
 
         val result = taxCalculation(card, translation, transfersMonth)
-        assertEquals(35.0, result, 0.001)
+        assertEquals(35.0, result, 0.001)  // значение delta - разряд до которого стоит учитывать значение result при сравнении (в данном случае до тысячных)
     }
 
     @Test
-    fun testTaxCalculationMirProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем (сравнение до 3х знаков после запятой)
+    fun testTaxCalculationMirProcent() {
         val card = "Mir"
         val translation = 20000
         val transfersMonth = 0
