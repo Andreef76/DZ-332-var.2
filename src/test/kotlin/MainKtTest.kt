@@ -16,12 +16,12 @@ class MainKtTest {
 
     @Test
     fun testTaxCalculationVisaProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем.
+        // Проблема в том, что почему-то в github Actions по-другому отрабатывает метод String.format() (вместо запятой ставит точку)
         // Метод replace заменяет в строке все символы из 1 параметра символом из второго параметра
         val card = "Visa"
         val translation = 20000
         val transfersMonth = 0
-//        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
-//        assertEquals("150.000".replace(".",","), result)
+
         val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth)).replace(".",",")
         assertEquals("150,000", result)
     }
