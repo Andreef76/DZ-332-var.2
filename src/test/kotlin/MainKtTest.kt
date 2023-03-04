@@ -15,12 +15,15 @@ class MainKtTest {
     }
 
     @Test
-    fun testTaxCalculationVisaProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем
+    fun testTaxCalculationVisaProcent() {     // ВАРИАНТ СРАВНЕНИЯ 2.  приводим значение к String и сравниваем.
+        // Метод replace заменяет в строке все символы из 1 параметра символом из второго параметра
         val card = "Visa"
         val translation = 20000
         val transfersMonth = 0
-        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
-        assertEquals("150.000".replace(".",","), result)
+//        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
+//        assertEquals("150.000".replace(".",","), result)
+        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth)).replace(".",",")
+        assertEquals("150,000", result)
     }
     @Test
     fun testTaxCalculationMir() {    // ВАРИАНТ СРАВНЕНИЯ 1
@@ -37,8 +40,8 @@ class MainKtTest {
         val card = "Mir"
         val translation = 20000
         val transfersMonth = 0
-        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
-        assertEquals("150.000".replace(".",","), result)
+        val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth)).replace(".",",")
+        assertEquals("150,000", result)
     }
 
     @Test
