@@ -20,7 +20,7 @@ class MainKtTest {
         val translation = 20000
         val transfersMonth = 0
         val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
-        assertEquals("150.000", result)
+        assertEquals("150.000".replace(".",","), result)
     }
     @Test
     fun testTaxCalculationMir() {    // ВАРИАНТ СРАВНЕНИЯ 1
@@ -38,7 +38,7 @@ class MainKtTest {
         val translation = 20000
         val transfersMonth = 0
         val result = String.format("%.3f", taxCalculation(card, translation, transfersMonth))
-        assertEquals("150.000", result)
+        assertEquals("150.000".replace(".",","), result)
     }
 
     @Test
